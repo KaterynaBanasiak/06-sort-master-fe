@@ -4,12 +4,9 @@ export default function Header() {
   return (
     <header className="w-full border-b bg-white shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-        {/* Logo / Brand */}
         <Link to="/" className="text-xl font-semibold text-gray-900">
           Trash Sort
         </Link>
-
-        {/* Navigation Links */}
         <nav className="flex items-center space-x-4">
           <Link
             to="/"
@@ -34,6 +31,12 @@ export default function Header() {
             className="text-sm font-medium text-gray-600 hover:text-black transition-colors"
           >
             Add container
+          </Link>
+          <Link
+            to="/add-item"
+            className="text-sm font-medium text-gray-600 hover:text-black transition-colors"
+          >
+            Add item
           </Link>
         </nav>
       </div>
