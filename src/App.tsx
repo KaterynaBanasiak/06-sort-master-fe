@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Layout from "./layouts/Layout";
 import Containers from "./pages/Containers";
 import AddItemForm from "./components/AddItemForm";
+import Items from "./pages/Items";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <li><Link to="/about">About</Link></li>
           <li><Link to="/containers">Containers</Link></li>
           <li><Link to="/add-item">Add Item</Link></li>
+          <li><Link to="/items">Items</Link></li>
         </ul>
       </nav>
 
@@ -23,6 +25,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/containers" element={<Containers />} />
           <Route path="/add-item" element={<AddItemForm />} />
+          <Route path="/items" element={<Items />} />
         </Routes>
       </Layout>
     </div>
@@ -30,4 +33,5 @@ function App() {
 }
 
 export default App;
+
 
