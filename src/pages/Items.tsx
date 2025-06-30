@@ -6,8 +6,7 @@ import { css } from "@emotion/react";
 type Item = {
   id: number;
   name: string;
-  type: string;
-  weight: number;
+  containerId: number;
 };
 
 const containerStyle = css`
@@ -63,7 +62,7 @@ const Items = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get<Item[]>("http://localhost:8080/items")
+      .get<Item[]>("http://localhost:8080/api/items") // исправленный путь
       .then((res) => {
         setItems(res.data);
         setError(null);
@@ -83,18 +82,15 @@ const Items = () => {
       <h1 css={titleStyle}>Список предметов</h1>
 
       {loading && <p css={loadingStyle}>Загрузка...</p>}
-
       {error && <p css={errorStyle}>{error}</p>}
-
       {!loading && !error && items.length === 0 && (
         <p css={emptyStyle}>Список пуст</p>
       )}
-
       {!loading && !error && items.length > 0 && (
         <ul css={listStyle}>
           {items.map((item) => (
             <li key={item.id} css={listItemStyle}>
-              <strong>{item.name}</strong> — {item.type}, {item.weight} кг
+              <strong>{item.name}</strong> — контейнер #{item.containerId}
             </li>
           ))}
         </ul>
