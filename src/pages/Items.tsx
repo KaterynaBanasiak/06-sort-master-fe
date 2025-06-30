@@ -13,17 +13,16 @@ const Items = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-  axios
-    .get<Item[]>("http://localhost:8080/items")
-    .then((res) => setItems(res.data))
-    .catch((err) => {
-      console.error("Ошибка при загрузке items:", err);
-      setError("Ошибка загрузки данных: " + err.message);
-    });
-}, []);
+    axios
+      .get<Item[]>("http://localhost:8080/items")
+      .then((res) => setItems(res.data))
+      .catch((err) => {
+        console.error("Ошибка при загрузке items:", err);
+        setError("Ошибка загрузки данных: " + err.message);
+      });
+  }, []);
 
-
-return (
+  return (
     <div style={{ padding: "20px" }}>
       <h1>Список предметов</h1>
       {error && <p style={{ color: "red" }}>{error}</p>}
@@ -39,3 +38,4 @@ return (
 };
 
 export default Items;
+
