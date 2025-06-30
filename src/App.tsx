@@ -3,7 +3,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Layout from "./layouts/Layout";
 import Containers from "./pages/Containers";
-import CreateContainerForm from "./components/CreateContainerForm";
 import AddItemForm from "./components/AddItemForm";
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/containers">Containers</Link></li>
-          <li><Link to="/container-form">Create Container</Link></li>
           <li><Link to="/add-item">Add Item</Link></li>
         </ul>
       </nav>
@@ -24,7 +22,6 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/containers" element={<Containers />} />
-          <Route path="/container-form" element={<CreateContainerForm />} />
           <Route path="/add-item" element={<AddItemForm />} />
         </Routes>
       </Layout>
@@ -33,5 +30,4 @@ function App() {
 }
 
 export default App;
-
 
